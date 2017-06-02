@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #define TRUE 1
 #define FALSE 0
@@ -25,5 +26,15 @@ struct pawn {
 };
 
 struct square board[8][8];
+
+struct move {
+  int starti;
+  int startj;
+  int endi;
+  int endj;
+  char piece;
+};
+
+struct move availableMoves[100];
 
 #endif

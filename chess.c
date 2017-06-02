@@ -51,6 +51,69 @@ void setupBoard(void) {
 }
 
 /*
+  Switches typically i,j indices we use with arrays to chess board locations.
+  for example, 1,6 will translate to g7
+*/
+char *translateCoords(int i, int j) {
+  char *coord = (char *)malloc(2 * sizeof(char));
+
+  switch (j) {
+  case 0:
+    coord[0] = 'a';
+    break;
+  case 1:
+    coord[0] = 'b';
+    break;
+  case 2:
+    coord[0] = 'c';
+    break;
+  case 3:
+    coord[0] = 'd';
+    break;
+  case 4:
+    coord[0] = 'e';
+    break;
+  case 5:
+    coord[0] = 'f';
+    break;
+  case 6:
+    coord[0] = 'g';
+    break;
+  case 7:
+    coord[0] = 'h';
+    break;
+  }
+
+  switch (i) {
+  case 0:
+    coord[1] = '8';
+    break;
+  case 1:
+    coord[1] = '7';
+    break;
+  case 2:
+    coord[1] = '6';
+    break;
+  case 3:
+    coord[1] = '5';
+    break;
+  case 4:
+    coord[1] = '4';
+    break;
+  case 5:
+    coord[1] = '3';
+    break;
+  case 6:
+    coord[1] = '2';
+    break;
+  case 7:
+    coord[1] = '1';
+    break;
+  }
+  return coord;
+}
+
+/*
     Prints out the board. I decided to include a-h and 1-8 so moves can be
     make using normal chess notation
 */
@@ -63,13 +126,15 @@ void printBoard(void) {
     }
     printf(" %d\n", 8 - i);
   }
-  printf("   a  b  c  d  e  f  g  h ");
+  printf("   a  b  c  d  e  f  g  h \n");
 }
 
 int main(int argc, char *argv[]) {
 
   setupBoard();
   printBoard();
+  printf("%s", board[0][4].occupant);
+  printf("%s", translateCoords(1, 6));
+
   return 0;
-  
 }
