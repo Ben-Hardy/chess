@@ -1,14 +1,13 @@
-C=gcc
-CFLAGS=-Wall -pedantic
+C = gcc 
+CFLAGS = -Wall -pedantic -std=c99
 
-executables=chess
+executables = chess
 
-bin/chess.o: chess.c
+bin/chess.o: chess.c 
 	$(C) $(CFLAGS) chess.c -o bin/chess
 
 run:
 	./bin/chess
 
-clean:
+clean: 
 	rm -rf bin/chess
-
