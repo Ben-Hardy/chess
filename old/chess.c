@@ -129,6 +129,10 @@ void printBoard(void) {
   printf("   a  b  c  d  e  f  g  h \n");
 }
 
+void generateMoves(char team) {
+  
+}
+
 int main(int argc, char *argv[]) {
 
   setupBoard();
