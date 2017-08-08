@@ -13,69 +13,7 @@ public class ChessBoard {
   // the board itself. It will be 8x8
   ChessSquare board[][];
 
-  /*
-    Switches typically i,j indices we use with arrays to chess board locations.
-    for example, 1,6 will translate to g7
 
-    static so the function can be used in other contexts
-  */
-  public static String getCoords(int i, int j) {
-    StringBuilder s = new StringBuilder();
-
-    switch (j) {
-      case 0:
-        s.append('a');
-        break;
-      case 1:
-        s.append('b');
-        break;
-      case 2:
-        s.append('c');
-        break;
-      case 3:
-        s.append('d');
-        break;
-      case 4:
-        s.append('e');
-        break;
-      case 5:
-        s.append('f');
-        break;
-      case 6:
-        s.append('g');
-        break;
-      case 7:
-        s.append('h');
-        break;
-    }
-    switch (i) {
-      case 0:
-        s.append('8');
-        break;
-      case 1:
-        s.append('7');
-        break;
-      case 2:
-        s.append('6');
-        break;
-      case 3:
-        s.append('5');
-        break;
-      case 4:
-        s.append('4');
-        break;
-      case 5:
-        s.append('3');
-        break;
-      case 6:
-        s.append('2');
-        break;
-      case 7:
-        s.append('1');
-        break;
-    }
-    return s.toString();
-  }
 
   // Function to create and add pieces to the game.
   // name is the ID for the piece type, i and j are the array coords on the
@@ -142,4 +80,13 @@ public class ChessBoard {
     }
     System.out.println("   a  b  c  d  e  f  g  h  ");
   }
+
+  public void move(String piecefrom, String to) {
+	String piece = piecefrom.substring(0,0);
+	int[] indices = ChessUtils.getIndices(piecefrom.substring(1, 2));
+	
+	
+  }
+
+
 }

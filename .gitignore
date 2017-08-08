@@ -1,5 +1,5 @@
 
 *.json
-.metadata/
+.metadata/*
 .recommenders/
 bin/chess

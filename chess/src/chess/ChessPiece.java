@@ -52,7 +52,7 @@ public class ChessPiece {
   }
 
   public String getCoords() {
-    return ChessBoard.getCoords(i, j);
+    return ChessUtils.getCoords(i, j);
   }
 
   @Override

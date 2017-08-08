@@ -46,5 +46,15 @@ public class ChessTest {
     // probe a few board squares to make sure the board is populated correctly
     assertEquals(b.board[0][0].getPiece().getName(), "br");
     assertEquals(b.board[2][2].getPiece(), null);
+    b.printBoard();
+
+    // test index -> coord and coord -> index
+    assertEquals(ChessUtils.getCoords(1, 6), "g7");
+    assertEquals(ChessUtils.getIndices("g7")[0], 1);
+    assertEquals(ChessUtils.getIndices("g7")[1], 6);
+    
+    
+    // test moving things about the board
+    //b.move("ra8", "b6");
   }
 }
